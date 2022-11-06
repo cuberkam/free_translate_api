@@ -1,3 +1,5 @@
+from http import HTTPStatus
+
 from django.http import JsonResponse
 from django.views import View
 from googletrans import Translator
@@ -12,8 +14,14 @@ class Translate(View):
         except Exception:
             source_language = None
 
-        destination_language = request.GET["dl"]
-        text = request.GET["text"]
+        try:
+            destination_language = request.GET["dl"]
+            text = request.GET["text"]
+        except Exception:
+            return JsonResponse(
+                {"details": "dl or text fields are missing."},
+                status=HTTPStatus.BAD_REQUEST,
+            )
 
         if source_language is not None:
             translate_result = translator.translate(
