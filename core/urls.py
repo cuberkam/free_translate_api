@@ -13,9 +13,12 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls import handler404
 from django.urls import path
 from index.views import Index
 from translate.views import Translate
+
+handler404 = "index.views.page_not_found_view"
 
 urlpatterns = [
     path("", Index.as_view(), name="index"),
