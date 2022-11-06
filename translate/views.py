@@ -41,6 +41,13 @@ def build_response(translate_result):
     except Exception:
         phonetic = None
 
+    source_text_audio = "https://translate.google.com/translate_tts?ie=UTF-&&client=tw-ob&tl={}&q={}".format(
+        source_language, source_text
+    )
+    destination_text_audio = "https://translate.google.com/translate_tts?ie=UTF-&&client=tw-ob&tl={}&q={}".format(
+        destination_language, destination_text
+    )
+
     response = {
         "source-language": source_language,
         "source-text": source_text,
@@ -48,12 +55,8 @@ def build_response(translate_result):
         "destination-text": destination_text,
         "pronunciation": {
             "source-text-phonetic": phonetic,
-            "source-text-audio": "https://translate.google.com/translate_tts?ie=UTF-&&client=tw-ob&tl={}&q={}".format(
-                source_language, source_text
-            ),
-            "destination-text-audio": "https://translate.google.com/translate_tts?ie=UTF-&&client=tw-ob&tl={}&q={}".format(
-                destination_language, destination_text
-            ),
+            "source-text-audio": source_text_audio.replace(" ", "%20"),
+            "destination-text-audio": destination_text_audio.replace(" ", "%20"),
         },
         "translations": build_translations(translate_result.extra_data),
         "definitions": build_definitions(translate_result.extra_data),
@@ -134,6 +137,10 @@ def built_examples(examples, id):
             for in_item in item:
                 if id == in_item[5]:
                     data.append(in_item[0])
+
+        if data == []:
+            return None
+
         return data
 
     else:
@@ -154,6 +161,9 @@ def built_synonyms(synonyms, id):
                         key = ""
 
                     data[key] = in_item[0]
+
+        if data == {}:
+            return None
 
         return data
 
