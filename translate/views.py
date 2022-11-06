@@ -3,6 +3,7 @@ from http import HTTPStatus
 from django.http import JsonResponse
 from django.views import View
 from googletrans import Translator
+from googletrans.constants import LANGUAGES
 
 
 class Translate(View):
@@ -177,3 +178,8 @@ def built_synonyms(synonyms, id):
 
     else:
         return synonyms
+
+
+class Languages(View):
+    def get(self, request):
+        return JsonResponse(LANGUAGES)

@@ -16,11 +16,12 @@ Including another URLconf
 from django.conf.urls import handler404
 from django.urls import path
 from index.views import Index
-from translate.views import Translate
+from translate.views import Languages, Translate
 
 handler404 = "index.views.page_not_found_view"
 
 urlpatterns = [
     path("", Index.as_view(), name="index"),
     path("translate", Translate.as_view(), name="translate"),
+    path("languages", Languages.as_view(), name="languages"),
 ]
