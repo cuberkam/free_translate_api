@@ -3,7 +3,7 @@ services:
     build: .
     container_name: ftapi
     ports:
-      - 8000:8000
+      - "${HOST_PORT:-8000}:8000"
     environment:
       SECRET_KEY: ${SECRET_KEY}
       ALLOWED_HOSTS: ${ALLOWED_HOSTS}
