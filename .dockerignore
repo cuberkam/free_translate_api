@@ -1,0 +1,109 @@
+# Python / Flask gereksiz dosyalar
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+.installed.cfg
+*.manifest
+*.spec
+
+# Paketleme / build çıktıları
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+MANIFEST
+
+# Cache / test çıktıları
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Log / database
+*.log
+db.sqlite3
+db.sqlite3-journal
+
+# Flask instance klasörü
+instance/*
+!.gitignore
+
+# Scrapy
+.scrapy
+
+# Dokümantasyon build
+docs/_build/
+.pybuilder/
+target/
+
+# Notebook / IPython
+.ipynb_checkpoints
+profile_default/
+ipython_config.py
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# Ortam dosyaları
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# VS Code
+.vscode
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# IDE / editör
+.spyderproject
+.spyproject
+.ropeproject
+.site
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+cython_debug/
+.history
+.ionide
+*.vsix
+
+# Pip / Poetry / PDM
+Pipfile.lock
+poetry.lock
+pdm.lock
+.pdm.toml
+__pypackages__/
+pyvenv.cfg
+pip-selfcheck.json

@@ -1,0 +1,9 @@
+services:
+  backend:
+    build: .
+    container_name: ftapi
+    ports:
+      - 8000:8000
+    environment:
+      SECRET_KEY: ${SECRET_KEY}
+      ALLOWED_HOSTS: ${ALLOWED_HOSTS}
