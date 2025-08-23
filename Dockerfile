@@ -1,7 +1,7 @@
 FROM python:3.10-slim-bookworm
 
 # Set environment variables to optimize Python
-ENV PYTHONDONTWRITEBYTECODE=1 \ PYTHONUNBUFFRED=1
+ENV PYTHONDONTWRITEBYTECODE=1 \ PYTHONUNBUFFERED=1
 
 WORKDIR /app
 
