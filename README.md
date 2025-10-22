@@ -1,8 +1,17 @@
 # Free Translate API
 
+## ⚠️ Important Notice
+
+The website hosted on PythonAnywhere is for demonstration purposes only. This is not a public API service and does not support external API hosting.
+
+If you want to use this project as an API, please clone the repository and host it on your own server or cloud platform.
+
+## 📖 Usage Guide
+
 With the Free Translate API, you can translate words or sentences into the language you want. There are 2 ways to do this.
 
 **URL Parameters**
+
 - sl = Source language code
 - dl = Destination language code
 - text = word or sentence
